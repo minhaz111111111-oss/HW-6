@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Trebuchet MS", sans-serif;;
+}
+
+.container{
+    margin: 0 auto;
+    width: 1350px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+nav {
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.1);
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul a{
+    padding: 14px 0px;
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    position: relative;
+}
+
+nav ul a:hover {
+    color: #ef4a23;
+}
+
+nav ul a::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #ef4a23;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+}
+
+nav ul a:hover::before {
+    opacity: 1;
+    visibility: visible;
+    width: 100%;
+}
+
+nav ul li.parent {
+    position: relative;
+}
+
+nav .submenu {
+    padding: 0px 10px 0px 10px;
+    width: 160px;
+    background-color: #ffffff;
+    display: block;
+    position: absolute;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    top: 150px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+nav ul li.parent:hover .submenu {
+    transition: 0.5s;
+    top: 100%;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+nav .submenu li{
+    position: relative;
+}
+
+nav .submenu .minimenu{
+    padding: 0px 10px 0px 10px;
+    width: 160px;
+    background-color: #ffffff;
+    display: block;
+    position: absolute;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    top: 0;
+    left: 150px;
+    bottom: 0;
+    visibility: hidden;
+    opacity: 0;
+
+}
+
+nav .submenu li:hover > .minimenu {
+    opacity: 1;
+    visibility: visible; 
+}
